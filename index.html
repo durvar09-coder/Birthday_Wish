@@ -1,0 +1,317 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>For My Patil ❤️ | Birthday Surprise</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- Background Effects -->
+    <div id="hearts"></div>
+    <div id="confetti"></div>
+
+    <!-- Background Music -->
+    <audio id="bgMusic" loop>
+        <source src="music/romantic.mp3" type="audio/mpeg">
+    </audio>
+
+    <button class="music-btn" onclick="toggleMusic()">
+        🎵 Music Off
+    </button>
+
+    <!-- SCREEN 0: PASSWORD -->
+    <section class="screen active" id="screen0">
+
+        <div class="card password-card">
+
+            <div class="big-heart">🔐</div>
+
+            <p class="small-heading">A LITTLE SECRET WORLD</p>
+
+            <h1>Only for You</h1>
+
+            <p class="description">
+                This little world is made especially
+                for someone very special.
+            </p>
+
+            <p class="password-label">
+                Enter your secret password ❤️
+            </p>
+
+            <input
+                type="password"
+                id="passwordInput"
+                placeholder="Enter password"
+                onkeydown="if(event.key === 'Enter') checkPassword()"
+            >
+
+            <p id="passwordError"></p>
+
+            <button onclick="checkPassword()">
+                Unlock My Surprise 💗
+            </button>
+
+            <p class="footer-text">
+                A secret made with love ♡
+            </p>
+
+        </div>
+
+    </section>
+
+    <!-- SCREEN 1: WELCOME -->
+    <section class="screen" id="screen1">
+
+        <div class="card">
+
+            <div class="sparkle">✨ 🌸 ✨</div>
+
+            <p class="small-heading">
+                SOMETHING SPECIAL IS WAITING FOR YOU
+            </p>
+
+            <h1>Hey, Patil! 💗</h1>
+
+            <p class="description">
+                I have a little surprise for you.
+                Every little detail on this website
+                carries a piece of my heart.
+            </p>
+
+            <div class="big-heart">❤️</div>
+
+            <button onclick="nextScreen(2)">
+                Open Your Surprise 💌
+            </button>
+
+            <p class="footer-text">
+                Made with endless love, just for you.
+            </p>
+
+        </div>
+
+    </section>
+
+    <!-- SCREEN 2: COUNTDOWN -->
+    <section class="screen" id="screen2">
+
+        <div class="card">
+
+            <div class="big-heart">🎂</div>
+
+            <p class="small-heading">
+                COUNTING DOWN TO YOUR SPECIAL DAY
+            </p>
+
+            <h1>Your Special Day!</h1>
+
+            <p class="description">
+                6 November is not just another date.
+                It's the day someone very special came
+                into this beautiful world.
+            </p>
+
+            <div class="countdown">
+
+                <div>
+                    <span id="days">00</span>
+                    <small>Days</small>
+                </div>
+
+                <div>
+                    <span id="hours">00</span>
+                    <small>Hours</small>
+                </div>
+
+                <div>
+                    <span id="minutes">00</span>
+                    <small>Minutes</small>
+                </div>
+
+                <div>
+                    <span id="seconds">00</span>
+                    <small>Seconds</small>
+                </div>
+
+            </div>
+
+            <p id="birthdayStatus">
+                Waiting for your special moment ❤️
+            </p>
+
+            <button onclick="nextScreen(3)">
+                Continue My Surprise 💕
+            </button>
+
+        </div>
+
+    </section>
+
+    <!-- SCREEN 3: BIRTHDAY CELEBRATION -->
+    <section class="screen" id="screen3">
+
+        <div class="card">
+
+            <div class="cake">🎂</div>
+
+            <p class="small-heading">
+                TODAY IS ALL ABOUT YOU
+            </p>
+
+            <h1>Happy Birthday!</h1>
+
+            <h2>My Patil ❤️</h2>
+
+            <p class="description">
+                May your life always shine brighter
+                than the stars. May all your dreams
+                come true.
+            </p>
+
+            <div class="candles" id="candles">
+                🕯️ 🕯️ 🕯️
+            </div>
+
+            <button onclick="blowCandles()">
+                Blow Your Candles 🎂
+            </button>
+
+            <button class="secondary" onclick="nextScreen(4)">
+                Read My Heart 💌
+            </button>
+
+        </div>
+
+    </section>
+
+    <!-- SCREEN 4: LOVE LETTER -->
+    <section class="screen" id="screen4">
+
+        <div class="card letter-card">
+
+            <div class="letter-icon">💌</div>
+
+            <p class="small-heading">
+                SOMETHING I WANT YOU TO KNOW
+            </p>
+
+            <h1>My Dear Patil...</h1>
+
+            <div class="letter-box">
+
+                <p id="loveLetter"></p>
+
+            </div>
+
+            <button onclick="nextScreen(5)">
+                Our Beautiful Memories 📸
+            </button>
+
+        </div>
+
+    </section>
+
+    <!-- SCREEN 5: MEMORIES -->
+    <section class="screen" id="screen5">
+
+        <div class="card memory-card">
+
+            <p class="small-heading">
+                LITTLE MOMENTS, FOREVER MEMORIES
+            </p>
+
+            <h1>Our Memories ❤️</h1>
+
+            <p class="description">
+                Every picture tells a story.
+                Every moment has a special place
+                in my heart.
+            </p>
+
+            <div class="gallery">
+
+                <div class="photo">
+                    <img src="images/photo1.jpg" alt="Memory one">
+                    <p>My Favourite Moment ❤️</p>
+                </div>
+
+                <div class="photo">
+                    <img src="images/photo2.jpg" alt="Memory two">
+                    <p>Beautiful Together 💗</p>
+                </div>
+
+                <div class="photo">
+                    <img src="images/photo3.jpg" alt="Memory three">
+                    <p>Forever Special 🌸</p>
+                </div>
+
+            </div>
+
+            <button onclick="nextScreen(6)">
+                One Last Surprise 🎁
+            </button>
+
+        </div>
+
+    </section>
+
+    <!-- SCREEN 6: FINAL SURPRISE -->
+    <section class="screen" id="screen6">
+
+        <div class="card final-card">
+
+            <div class="final-heart">💖</div>
+
+            <p class="small-heading">
+                TO MY FAVOURITE PERSON
+            </p>
+
+            <h1>Happy Birthday, Patil!</h1>
+
+            <p class="final-message">
+                If I could give you one thing in this
+                world, it would be the ability to see
+                yourself through my eyes.
+
+                Then you would understand just how
+                special you are to me.
+            </p>
+
+            <h2>I Love You! ❤️</h2>
+
+            <p class="description">
+                You are not just a part of my story.
+                You are one of my favourite chapters.
+            </p>
+
+            <div class="final-flowers">
+                🌹 🌸 💗 🌸 🌹
+            </div>
+
+            <button onclick="restartWebsite()">
+                Relive Our Little Love Story ↻
+            </button>
+
+        </div>
+
+    </section>
+
+    <footer>
+        Made with ❤️ for My Patil | 6 November
+    </footer>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
